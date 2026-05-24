@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gallery Page</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="letter.html">Letter</a>
+      <a href="music.html">Music</a>
+
+    </nav>
+  </header>
+
+<div class="music-page">
+
+<div class="phone">
+
+<!-- PLAYLIST HEADER -->
+<div class="playlist-header">
+
+<img src="11.jpeg" class="cover">
+
+<h2>Our Love Playlist ❤️</h2>
+<p>Made for Lovey</p>
+
+<button onclick="playSong('taylorswiftmix.mp4','loveymusic','lovey')" class="play-btn">
+▶
+</button>
+
+</div>
+
+<!-- SONG LIST -->
+<div class="song-list">
+
+<div class="song" onclick="playSong('still into you.mp4','Still Into You','lovey')">
+<span class="number">1</span>
+<div class="song-info">
+<span class="title">Still Into You</span>
+<p>lovey</p>
+</div>
+<span class="menu">⋮</span>
+</div>
+
+<div class="song" onclick="playSong('daisies.mp4','Daisies','lovey')">
+<span class="number">2</span>
+<div class="song-info">
+<span class="title">Daisies</span>
+<p>lovey</p>
+</div>
+<span class="menu">⋮</span>
+</div>
+
+<div class="song" onclick="playSong('love me harder.mp4','Love Me Harder','lovey')">
+<span class="number">3</span>
+<div class="song-info">
+<span class="title">Love Me Harder</span>
+<p>lovey</p>
+</div>
+<span class="menu">⋮</span>
+</div>
+
+</div>
+
+<audio id="player" controls></audio>
+
+</div>
+
+</div>
+
+<footer>@Website for lovey 2026</footer>
+
+<script>
+
+function playSong(file,title,artist){
+
+let player=document.getElementById("player");
+player.src=file;
+player.play();
+
+/* highlight current song */
+let songs=document.querySelectorAll(".song");
+songs.forEach(s => s.classList.remove("playing"));
+
+event.currentTarget.classList.add("playing");
+
+}
+
+</script>
+
+</body>
+</html>
